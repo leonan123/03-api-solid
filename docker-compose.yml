@@ -1,0 +1,9 @@
+services:
+  api-solid-pg:
+    image: bitnami/postgresql:latest
+    environment:
+      - POSTGRESQL_USER=postgres
+      - POSTGRESQL_PASSWORD=password
+      - POSTGRESQL_DATABASE=api-solid-pg
+    ports:
+      - 5432:5432
