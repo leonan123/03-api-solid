@@ -12,6 +12,18 @@ export default defineConfig([
     rules: {
       'simple-import-sort/imports': 'error',
       'simple-import-sort/exports': 'error',
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          args: 'all',
+          argsIgnorePattern: '^_',
+          caughtErrors: 'all',
+          caughtErrorsIgnorePattern: '^_',
+          destructuredArrayIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          ignoreRestSiblings: true,
+        },
+      ],
     },
   },
   { files: ['**/*.{ts}'], languageOptions: { globals: globals.node } },

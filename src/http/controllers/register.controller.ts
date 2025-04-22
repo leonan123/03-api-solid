@@ -1,5 +1,5 @@
 import type { FastifyReply, FastifyRequest } from 'fastify'
-import z from 'zod'
+import { z } from 'zod'
 
 import { PrismaUserRepository } from '@/repositories/prisma/prisma-users.repository'
 import { UserAlreadyExistsError } from '@/use-cases/errors/email-already-exists.error'

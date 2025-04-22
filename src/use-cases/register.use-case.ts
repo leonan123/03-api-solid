@@ -1,4 +1,5 @@
 import { hashSync } from 'bcryptjs'
+import type { User } from 'generated/prisma'
 
 import type { UsersRepository } from '@/repositories/users.repository'
 
@@ -10,10 +11,18 @@ interface RegisterUseCaseRequest {
   password: string
 }
 
+interface RegisterUseCaseResponse {
+  user: User
+}
+
 export class RegisterUseCase {
   constructor(private usersRepository: UsersRepository) {}
 
-  async handle({ name, email, password }: RegisterUseCaseRequest) {
+  async handle({
+    name,
+    email,
+    password,
+  }: RegisterUseCaseRequest): Promise<RegisterUseCaseResponse> {
     const userWithSameEmail = await this.usersRepository.findByEmail(email)
 
     if (userWithSameEmail) {
@@ -22,10 +31,12 @@ export class RegisterUseCase {
 
     const password_hash = hashSync(password, 6)
 
-    await this.usersRepository.create({
+    const user = await this.usersRepository.create({
       name,
       email,
       password_hash,
     })
+
+    return { user }
   }
 }
