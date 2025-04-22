@@ -28,5 +28,10 @@ export default defineConfig([
   },
   { files: ['**/*.{ts}'], languageOptions: { globals: globals.node } },
   tseslint.configs.recommended,
-  globalIgnores(['node_modules/**/*', 'build/**/*', 'generated/**/*']),
+  globalIgnores([
+    'node_modules/**/*',
+    'build/**/*',
+    'generated/**/*',
+    'coverage/**/*',
+  ]),
 ])
