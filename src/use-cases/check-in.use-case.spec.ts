@@ -4,6 +4,7 @@ import { InMemoryCheckInsRepository } from '@/repositories/in-memory/in-memory-c
 import { InMemoryGymsRepository } from '@/repositories/in-memory/in-memory-gyms.repository'
 
 import { CheckInUseCase } from './check-in.use-case'
+import { MaxDistanceExceededError } from './errors/max-distance-exceeded.error'
 
 let checkInsRepository: InMemoryCheckInsRepository
 let gymsRepository: InMemoryGymsRepository
@@ -80,5 +81,25 @@ describe('Check in Use Case', () => {
     })
 
     expect(checkIn.id).toEqual(expect.any(String))
+  })
+
+  it('should not be able to check in on distant gym', async () => {
+    gymsRepository.create({
+      id: 'gym-02',
+      title: 'TypeScript Gym',
+      description: null,
+      phone: null,
+      latitude: -25.432421,
+      longitude: -49.273789,
+    })
+
+    await expect(() =>
+      sut.handle({
+        userId: 'user-01',
+        gymId: 'gym-02',
+        userLatitude: -27.2092052,
+        userLongitude: -49.6401091,
+      }),
+    ).rejects.toBeInstanceOf(MaxDistanceExceededError)
   })
 })
