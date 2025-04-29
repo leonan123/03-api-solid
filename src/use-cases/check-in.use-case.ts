@@ -8,6 +8,7 @@ import {
 } from '@/utils/get-distance-between-coordinates'
 
 import { MaxDistanceExceededError } from './errors/max-distance-exceeded.error'
+import { MaxNumberOfCheckInsError } from './errors/max-number-of-check-ins.error'
 import { ResourceNotFoundError } from './errors/resource-not-found.error'
 
 interface CheckInUseCaseRequest {
@@ -66,7 +67,7 @@ export class CheckInUseCase {
     )
 
     if (checkInOnSameDate) {
-      throw new Error('Check-in already exists on this date')
+      throw new MaxNumberOfCheckInsError()
     }
 
     const checkIn = await this.checkInRepository.create({
