@@ -8,6 +8,12 @@ import type { GymsRepository } from '../gyms.repository'
 export class InMemoryGymsRepository implements GymsRepository {
   public items: Gym[] = []
 
+  async findMany(query: string, page: number) {
+    return this.items
+      .filter((item) => item.title.toLowerCase().includes(query.toLowerCase()))
+      .slice((page - 1) * 20, page * 20)
+  }
+
   async findById(gymId: string) {
     const gym = this.items.find((item) => item.id === gymId)
     return gym || null
