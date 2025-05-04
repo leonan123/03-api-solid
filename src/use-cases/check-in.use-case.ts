@@ -39,7 +39,7 @@ export class CheckInUseCase {
     if (!gym) {
       throw new ResourceNotFoundError()
     }
-
+    
     const userCoordinates: Coordinates = {
       latitude: userLatitude,
       longitude: userLongitude,
