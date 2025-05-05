@@ -11,7 +11,7 @@ export class InMemoryGymsRepository implements GymsRepository {
   public items: Gym[] = []
 
   async findManyNearby(params: FindManyNearbyParams) {
-    return this.items.filter((item) => {
+    return this.items.filter((gym) => {
       const MAX_GYM_DISTANCE = 10 // KM
 
       const userLocation = {
@@ -20,8 +20,8 @@ export class InMemoryGymsRepository implements GymsRepository {
       }
 
       const gymLocation = {
-        latitude: item.latitude.toNumber(),
-        longitude: item.longitude.toNumber(),
+        latitude: gym.latitude.toNumber(),
+        longitude: gym.longitude.toNumber(),
       }
 
       const distance = getDistanceBetweenCoordinates(userLocation, gymLocation)
