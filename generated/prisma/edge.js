@@ -146,7 +146,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/home/leonan/desktop/VSCode/rocketseat/ignite/nodejs/03-api-solid/generated/prisma",
+      "value": "/Users/leonan/www/rocketseat/aulas/nodejs/03-api-solid/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -155,12 +155,12 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "debian-openssl-3.0.x",
+        "value": "darwin-arm64",
         "native": true
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/home/leonan/desktop/VSCode/rocketseat/ignite/nodejs/03-api-solid/prisma/schema.prisma",
+    "sourceFilePath": "/Users/leonan/www/rocketseat/aulas/nodejs/03-api-solid/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
