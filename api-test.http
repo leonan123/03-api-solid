@@ -13,10 +13,10 @@ POST http://localhost:3333/sessions
 Content-Type: application/json
 
 {
-  # "email": "9T5Yt@example.com",
+  "email": "9T5Yt@example.com",
   "password": "123456"
 }
 
 ### Profile
 GET http://localhost:3333/me
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiN2Q3ZGU0OS04MzkxLTQ0YjgtYWZjZC05OTZhMDhjYjg3YWMiLCJpYXQiOjE3NDY1MDM4Mzh9.7z1hOLlNR8TCliWGI9RjBkLtT1FjTth5HQLc8rYWI38
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiN2Q3ZGU0OS04MzkxLTQ0YjgtYWZjZC05OTZhMDhjYjg3YWMiLCJpYXQiOjE3NDY2NzU4Nzh9.fG4wZ4Im1eJFjmLT2Z1iyPiA-6Cj-Tk78_jRoOvUdhA
