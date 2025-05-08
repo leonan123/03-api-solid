@@ -5,7 +5,7 @@ import type { UsersRepository } from '@/repositories/users.repository'
 
 import { UserAlreadyExistsError } from './errors/email-already-exists.error'
 
-interface RegisterUseCaseRequest {
+export interface RegisterUseCaseRequest {
   name: string
   email: string
   password: string
