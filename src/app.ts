@@ -12,8 +12,8 @@ app.register(fastifyJwt, {
   secret: env.JWT_SECRET,
 })
 
-app.register(userRoutes)
-app.register(gymsRoutes)
+app.register(userRoutes, { prefix: 'users' })
+app.register(gymsRoutes, { prefix: 'gyms' })
 
 app.setErrorHandler((error, _, reply) => {
   if (error instanceof ZodError) {
