@@ -1,5 +1,7 @@
 import type { FastifyInstance } from 'fastify'
 
+import { verifyUserRole } from '@/http/middlewares/verify-user-role'
+
 import { verifyJWT } from '../../middlewares/verify-jwt'
 import { create } from './create.controller'
 import { nearby } from './nearby.controller'
@@ -11,5 +13,5 @@ export async function gymsRoutes(app: FastifyInstance) {
   app.get('/search', search)
   app.get('/nearby', nearby)
 
-  app.post('/', create)
+  app.post('/', { onRequest: [verifyUserRole('ADMIN')] }, create)
 }

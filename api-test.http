@@ -3,8 +3,8 @@ POST http://localhost:3333/users
 Content-Type: application/json
 
 {
-  "name": "leonan teste 3",
-  "email": "9T5Yt2223@example.com",
+  "name": "leonan admin",
+  "email": "leonanadmin2223@example.com",
   "password": "123456"
 }
 
@@ -13,7 +13,7 @@ POST http://localhost:3333/users/sessions
 Content-Type: application/json
 
 {
-  "email": "9T5Yt2223@example.com",
+  "email": "leonanadmin2223@example.com",
   "password": "123456"
 }
 
@@ -25,3 +25,16 @@ Cookie: refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlZmY1ZDNjMS
 ### Profile
 GET http://localhost:3333/users/me
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiN2Q3ZGU0OS04MzkxLTQ0YjgtYWZjZC05OTZhMDhjYjg3YWMiLCJpYXQiOjE3NDY2NzU4Nzh9.fG4wZ4Im1eJFjmLT2Z1iyPiA-6Cj-Tk78_jRoOvUdhA
+
+### Create gym 
+POST http://localhost:3333/gyms
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiI4ZjczOTJjYi1mYTgxLTRhMzctYjc5ZC0wM2QzNTljM2VjMWUiLCJpYXQiOjE3NDY5OTU2MjYsImV4cCI6MTc0Njk5NjIyNn0.IX98ERJphrm6tK1OuXFGtkXV4hwMuEmJQLFrmxbU3qc
+Content-Type: application/json
+
+{
+  "title": "JavaScript Gym",
+  "description": "Some description",
+  "phone": "11999999999",
+  "latitude": -27.2092052,
+  "longitude": -49.6401091
+}

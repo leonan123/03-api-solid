@@ -15,7 +15,7 @@ describe('Check-in validate (e2e)', () => {
   })
 
   it('should be able to validate a check-in', async () => {
-    const { token } = await createAndAuthenticateUser(app)
+    const { token } = await createAndAuthenticateUser(app, true)
 
     const responseProfile = await request(app.server)
       .get('/users/me')
