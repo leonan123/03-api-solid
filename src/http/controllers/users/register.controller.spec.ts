@@ -21,6 +21,4 @@ describe('Register (e2e)', () => {
 
     expect(response.statusCode).toEqual(201)
   })
-
-  expect(1 + 1).toEqual(2)
 })
