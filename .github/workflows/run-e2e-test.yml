@@ -28,9 +28,10 @@ jobs:
         with:
           node-version: 22
           cache: 'pnpm'
-        env: 
-          JWT_SECRET: test_secret
-          DATABASE_URL: "postgres://docker:docker@localhost:5432/api-solid-pg?schema=public"
 
       - run: pnpm i --frozen-lockfile
       - run: pnpm test:e2e
+
+        env: 
+          JWT_SECRET: test_secret
+          DATABASE_URL: "postgres://docker:docker@localhost:5432/api-solid-pg?schema=public"
