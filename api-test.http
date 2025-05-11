@@ -17,6 +17,11 @@ Content-Type: application/json
   "password": "123456"
 }
 
+### Refresh token
+PATCH http://localhost:3333/users/token/refresh
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlZmY1ZDNjMS0wNmVhLTQyOTEtYmI4Ni1kMzI5M2QzZGRhNjEiLCJpYXQiOjE3NDY5OTEwMzcsImV4cCI6MTc0Njk5MTYzN30.77z_Kmu7Mkynk9FK1uQoWxd2giIVv_PI1x2YKbKLH4Q
+Cookie: refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlZmY1ZDNjMS0wNmVhLTQyOTEtYmI4Ni1kMzI5M2QzZGRhNjEiLCJpYXQiOjE3NDY5OTEwMzcsImV4cCI6MTc0NzU5NTgzN30.xKGbEZyPYoiIT1RW1nuDnlUiYZ3Sd2a4c7AyCzK9o6w
+
 ### Profile
 GET http://localhost:3333/users/me
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiN2Q3ZGU0OS04MzkxLTQ0YjgtYWZjZC05OTZhMDhjYjg3YWMiLCJpYXQiOjE3NDY2NzU4Nzh9.fG4wZ4Im1eJFjmLT2Z1iyPiA-6Cj-Tk78_jRoOvUdhA
